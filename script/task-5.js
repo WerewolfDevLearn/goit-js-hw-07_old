@@ -1,9 +1,11 @@
-import users from './users.js';
+const inputRef = document.querySelector("input#name-input");
+const outputRef = document.querySelector("span#name-output");
 
-const getUserWithEmail = (users, email) => {
-    const userWithEmail = users.find(user => user.email === email)
-    return userWithEmail;
-  };
-  
-  console.log(getUserWithEmail(users, 'shereeanthony@kog.com')); // {объект пользователя Sheree Anthony}
-  console.log(getUserWithEmail(users, 'elmahead@omatom.com')); // {объект пользователя Elma Head}
+inputRef.addEventListener("input", getInputValue);
+
+function getInputValue() {
+  inputRef.value === ""
+    ? (outputRef.textContent = "незнакомец")
+    : (outputRef.textContent = inputRef.value);
+  console.log(outputRef.textContent);
+}

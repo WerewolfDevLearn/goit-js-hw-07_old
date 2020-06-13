@@ -22,7 +22,7 @@ const createGalleryItem = (galleryItem) => {
 
   const item = document.createElement("img");
   item.classList.add("gallery__image");
-  item.setAttribute("src", `${galleryItem.url}`);
+  item.src = `${galleryItem.url}`;
   item.setAttribute("alt", `${galleryItem.alt}`);
   itemContainer.append(item);
   return itemContainer;

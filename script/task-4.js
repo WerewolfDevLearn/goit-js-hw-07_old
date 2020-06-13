@@ -1,11 +1,25 @@
-import users from './users.js';
+let counterValue = 0;
 
-console.log(users);
+const increaseButton = document.querySelector(
+  'button[data-action="increment"]'
+);
 
-const getInactiveUsers = users => {
-  const inactiveUsers = users.filter(user => !user.isActive);
-  return inactiveUsers;
+const decreaseButton = document.querySelector(
+  'button[data-action="decrement"]'
+);
+const counterAcc = document.querySelector("div#counter span#value");
+
+const increment = () => {
+  counterValue += 1;
+  counterAcc.textContent = counterValue;
+  return counterValue;
 };
 
-console.log(getInactiveUsers(users));
-// [объект Moore Hensley, объект Ross Vazquez, объект Blackburn Dotson]
+const decrement = () => {
+  counterValue -= 1;
+  counterAcc.textContent = counterValue;
+  return counterValue;
+};
+
+increaseButton.addEventListener("click", increment);
+decreaseButton.addEventListener("click", decrement);
