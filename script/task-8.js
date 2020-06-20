@@ -4,7 +4,7 @@ const inputNumber = document.querySelector("#controls input");
 const outputBox = document.querySelector("#boxes");
 
 let amount = 0;
-inputNumber.addEventListener("input", getInputValue);
+// inputNumber.addEventListener("input", getInputValue);
 btnCreate.addEventListener("click", () => {
   createBoxes(amount);
 });
@@ -12,11 +12,12 @@ btnCreate.addEventListener("click", () => {
 btnDestroy.addEventListener("click", destroyBoxes);
 
 function createBoxes(amount) {
-  console.log("infunction", `${amount}`);
+  // console.log("infunction", `${amount}`);
   const itemsContainer = document.createElement("div");
   itemsContainer.classList.add("container");
+  amount = inputNumber.value;
 
-  for (let i = 0; i <= amount; i += 1) {
+  for (let i = 1; i <= amount; i += 1) {
     const item = document.createElement("div");
     item.classList.add("item");
     item.style.backgroundColor = colorGenerator();
@@ -36,8 +37,8 @@ function destroyBoxes() {
 function colorGenerator() {
   return "#" + Math.floor(Math.random() * 16777215).toString(16);
 }
-function getInputValue() {
-  amount = inputNumber.value;
-  console.log(amount);
-  return amount;
-}
+// function getInputValue() {
+//   amount = inputNumber.value;
+//   console.log(amount);
+//   return amount;
+// }

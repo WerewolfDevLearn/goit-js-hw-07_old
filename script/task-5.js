@@ -4,8 +4,6 @@ const outputRef = document.querySelector("span#name-output");
 inputRef.addEventListener("input", getInputValue);
 
 function getInputValue() {
-  inputRef.value === ""
-    ? (outputRef.textContent = "незнакомец")
-    : (outputRef.textContent = inputRef.value);
+  outputRef.textContent = inputRef.value === "" ? "незнакомец" : inputRef.value;
   console.log(outputRef.textContent);
 }
